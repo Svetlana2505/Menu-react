@@ -1,0 +1,15 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: 400;
+  color: var(--text-default);
+}
+
+.container {
+  max-width: 870px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
