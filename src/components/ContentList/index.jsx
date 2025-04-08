@@ -15,7 +15,7 @@ export const ContentList = ({ items }) => {
               {/* <img /> */}
 
               <div className="text-top__price">
-                {oldPrice && <span>$ {formatPrice(oldPrice)}</span>} $
+                {oldPrice && <span> {formatPrice(oldPrice)}</span>}
                 {formatPrice(price)}
               </div>
             </div>
