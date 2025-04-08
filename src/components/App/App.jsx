@@ -4,7 +4,6 @@ import './_base.scss';
 import './_fonts.scss';
 import './_wrapper.scss';
 import { Header } from 'components/Header';
-
 import { Nav } from 'components/Nav';
 import { Content } from 'components/Content';
 
