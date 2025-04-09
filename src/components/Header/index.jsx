@@ -14,14 +14,6 @@ export const Header = () => {
               eiusmod tempor incididunt ut labore.
             </p>
           </div>
-          <div className="header-menu">
-            <ul>
-              <li>Menu</li>
-              <li>Restaurant</li>
-              <li>Classes</li>
-            </ul>
-            <button>Book a Table</button>
-          </div>
         </div>
       </div>
     </div>

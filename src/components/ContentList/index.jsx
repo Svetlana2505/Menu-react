@@ -1,28 +1,36 @@
 import './style.scss';
 import formatPrice from '../../utils/priceFormatter';
 
-export const ContentList = ({ items }) => {
-  return (
-    <ul className="content-menu__list">
-      {items.map(({ description, img, name, price, tags, oldPrice }) => (
-        <li className="content-menu__item" key={name}>
-          <div className="img">
-            <img src={img.src} srcSet={img.srcSet} alt="" />
-          </div>
-          <div className="text">
-            <div className="text-top">
-              <p className="text-top__text">{name}</p>
-              {/* <img /> */}
+export const ContentList = ({
+  item: { name, img, oldPrice, description, price, tags, label },
+}) => {
+  const classNames = tags => {
+    let names = 'content-menu__item';
 
-              <div className="text-top__price">
-                {oldPrice && <span> {formatPrice(oldPrice)}</span>}
-                {formatPrice(price)}
-              </div>
-            </div>
-            <div className="text-bottom">{description}</div>
+    if (tags) {
+      names += tags.includes('vegan') ? ' item--vegan' : '';
+      names += tags.includes('special') ? ' item--special' : '';
+    }
+
+    return names;
+  };
+
+  return (
+    <li className={classNames(tags)} data-label={label}>
+      <div className="img">
+        <img src={img.src} srcSet={img.srcset} alt={name} />
+      </div>
+      <div className="text">
+        <div className="text-top">
+          <div className="text-top__text">{name}</div>
+
+          <div className="text-top__price">
+            {oldPrice && <span> {formatPrice(oldPrice)}</span>}
+            {formatPrice(price)}
           </div>
-        </li>
-      ))}
-    </ul>
+        </div>
+        <div className="text-bottom">{description}</div>
+      </div>
+    </li>
   );
 };

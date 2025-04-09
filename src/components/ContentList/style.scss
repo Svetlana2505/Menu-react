@@ -1,3 +1,12 @@
+.content-menu {
+  padding-top: 40px;
+}
+
+.content-menu__list {
+  display: grid;
+  gap: 16px;
+}
+
 .content-menu__item {
   padding: 16px;
   display: flex;
@@ -5,14 +14,50 @@
   gap: 24px;
 }
 
+.content-menu__item.item--special {
+  position: relative;
+
+  border: 1px solid var(--text-primary);
+  border-radius: 16px;
+}
+
+.content-menu__item.item--special::after {
+  content: attr(data-label);
+
+  position: absolute;
+  top: 0;
+  right: 24px;
+  transform: translateY(-50%);
+
+  border-radius: 6px;
+  padding: 8px 12px;
+
+  background: var(--background-primary);
+
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 90%;
+  color: var(--text-inverse);
+}
+
 .img {
+  max-width: 90px;
+  height: 72px;
   img {
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
   }
 }
 
+.text {
+  flex: 1;
+}
+
 .text-top {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   font-size: 20px;
@@ -20,10 +65,23 @@
   color: var(--text-default);
 }
 
+.content-menu__item.item--vegan .text-top__text:after {
+  content: '';
+  margin-left: 16px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+
+  background-image: url('../../../public/img/leaf.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .text-top__price {
   span {
     text-decoration: line-through;
     opacity: 0.6;
+    margin-right: 10px;
   }
 }
 
@@ -32,4 +90,20 @@
   line-height: 1.6;
   color: var(--text-default);
   opacity: 0.6;
+}
+
+@media (max-width: 568px) {
+  .content-menu__item {
+    padding: 10px;
+    display: grid;
+    justify-items: center;
+  }
+
+  .text-bottom {
+    font-size: 13px;
+  }
+
+  .text-top__text {
+    margin-right: 8px;
+  }
 }
