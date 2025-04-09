@@ -92,6 +92,9 @@
 }
 
 .scroll-button {
+  position: fixed;
+  right: 20px;
+  bottom: 0;
   width: 40px;
   height: 40px;
   border-radius: 5px;
@@ -101,7 +104,7 @@
   z-index: 10;
   transform: rotate(-90deg);
   transition: bottom 0.3s, transform 0.3s;
-  // animation: move 2s infinite linear;
+  animation: move 2s infinite linear;
 }
 @keyframes move {
   0%,

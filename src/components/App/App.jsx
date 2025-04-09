@@ -7,6 +7,7 @@ import { Header } from 'components/Header';
 import { Content } from 'components/Content';
 
 import data from '../../data.json';
+import { Button } from 'components/Button';
 
 export const App = () => {
   return (
@@ -16,6 +17,7 @@ export const App = () => {
         <div className="container">
           <main>
             <Content data={data} />
+            <Button />
           </main>
           <footer></footer>
         </div>

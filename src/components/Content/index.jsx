@@ -3,7 +3,6 @@ import './style.scss';
 import { ContentList } from 'components/ContentList';
 
 export const Content = ({ data }) => {
-  console.log(data);
   return (
     <>
       <nav className="nav">
